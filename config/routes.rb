@@ -80,6 +80,7 @@ Rails.application.routes.draw do
   put    'customers/:id' => 'customers#update'
   delete 'customers/:id' => 'customers#destroy'
 
+
   
   get    'reservations'     => 'reservations#fetch_all'
   get    'reservations/:id' => 'reservations#fetch'
