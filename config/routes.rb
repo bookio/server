@@ -123,4 +123,5 @@ Rails.application.routes.draw do
   delete 'rentals/:id' => 'rentals#destroy'
  
  
+ 
 end
