@@ -2,11 +2,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: da2qrj2ltcdi6n
+  database: d3uoq4q0g7rpeb
   pool: 5
-  username: lzqbtzanlpnxxd
-  password: MugOd4f2Z_ktZS0UEPDwViR1F8
-  host: ec2-54-243-250-115.compute-1.amazonaws.com
+  username: kvfqksuntzehlc
+  password: dwO7w6TE7naBA56bMf55dgNTPV
+  host: ec2-54-204-47-70.compute-1.amazonaws.com
   port: 5432
   
 development:
