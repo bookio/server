@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917123750) do
+ActiveRecord::Schema.define(version: 20140922115650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -70,7 +71,6 @@ ActiveRecord::Schema.define(version: 20140917123750) do
     t.text     "description", default: "", null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "rental_id"
     t.integer  "client_id"
   end
 
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140917123750) do
     t.integer  "available",   default: 1,      null: false
     t.integer  "client_id"
     t.binary   "data",        default: "null", null: false
+    t.integer  "option_ids",  default: [],                  array: true
   end
 
   create_table "reservations", force: true do |t|

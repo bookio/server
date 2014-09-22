@@ -20,7 +20,7 @@ class OptionsController < ApplicationController
 	def fetch_by_rental_id
 		begin
 		  
-			output Option.where(:client_id => current_session.user.client.id, :rental_id => params[:rental_id]).all()
+			#output Option.where(:client_id => current_session.user.client.id, :rental_id => params[:rental_id]).all()
 	  
 		rescue Exception => exception
 			error exception.message, :not_found
@@ -73,7 +73,7 @@ class OptionsController < ApplicationController
 	private
 	
 	def options_params
-	  params.require(:option).permit(:description, :name, :rental_id, :client_id)
+	  params.require(:option).permit(:description, :name, :client_id)
 	
 	end
 	

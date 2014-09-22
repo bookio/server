@@ -110,7 +110,7 @@ class RentalsController < ApplicationController
 	private
 	
 	def rental_params
-		params.require(:rental).permit(:description, :name, :icon_id, :category_id, :depth, :available, :client_id, :data)
+		params.require(:rental).permit! #(:description, :name, {:xxx => []}, :icon_id, :category_id, :depth, :available, :client_id, :data, {'options' => []}, :prefs => [{:a => []}, :b], :settings => [{:a => []}, :b])
 	end
 
 end

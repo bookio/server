@@ -4,7 +4,7 @@ class Rental < ActiveRecord::Base
 	serialize :data
 	
 	has_many :reservations, :dependent => :destroy
-	has_many :options, :dependent => :destroy
+	#has_many :options, :dependent => :destroy
 	
 	
 	belongs_to :client
