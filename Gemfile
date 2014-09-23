@@ -40,5 +40,6 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
 
+gem 'pusher'
 
 ruby "2.1.2"
