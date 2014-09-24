@@ -65,16 +65,16 @@ class SessionsController < ApplicationController
 		
 		if user == nil
 			ActiveRecord::Base.transaction do        
-			client = Client.new
-			client.name = "Bookio"
-			client.save!
-			
-			user = client.users.new
-			user.name = username
-			user.username = username
-			user.email = username
-			user.password = password   
-			user.save!
+				client = Client.new
+				client.name = "Bookio"
+				client.save!
+				
+				user = client.users.new
+				user.name     = username
+				user.username = username
+				user.email    = username
+				user.password = password   
+				user.save!
 			end
 		end
 		

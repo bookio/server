@@ -9,6 +9,39 @@ class RentalsController < ApplicationController
 		end
 	end
 	
+	def generate
+		begin
+			
+			index = 0
+			count = params[:count].to_i()
+			name  = params[:name]
+			
+			result  = []
+			rentals = current_session.user.client.rentals
+			
+			ActiveRecord::Base.transaction do
+				while index < count do
+				
+					rental = rentals.new()
+					rental.name    = sprintf('%s %d', name, index + 1)
+					rental.icon_id = 0
+					rental.save
+					
+					index += 1
+
+					result.push rental
+				end
+			
+			end   	
+			
+			render :json => result
+		rescue Exception => exception
+			error exception.message, :not_found
+		end
+	
+	end
+ 	
+	
 	def query
 		begin
 			session = current_session

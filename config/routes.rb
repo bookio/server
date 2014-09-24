@@ -64,7 +64,6 @@ Rails.application.routes.draw do
   put    'users/:id'   => 'users#update'
   delete 'users/:id'   => 'users#destroy'
   
-
   get    'sessions'     => 'sessions#fetch_all'
   get    'sessions/:id' => 'sessions#fetch'
   delete 'sessions/:id' => 'sessions#destroy'
@@ -117,11 +116,12 @@ Rails.application.routes.draw do
   put    'categories/:id' => 'categories#update'
   delete 'categories/:id' => 'categories#destroy'
   
-  get    'rentals'     => 'rentals#fetch_all'
-  get    'rentals/:id' => 'rentals#fetch'
-  post   'rentals'     => 'rentals#create'
-  put    'rentals/:id' => 'rentals#update'
-  delete 'rentals/:id' => 'rentals#destroy'
+  post   'rentals/generate/:name/:count' => 'rentals#generate'
+  get    'rentals'          => 'rentals#fetch_all'
+  get    'rentals/:id'      => 'rentals#fetch'
+  post   'rentals'          => 'rentals#create'
+  put    'rentals/:id'      => 'rentals#update'
+  delete 'rentals/:id'      => 'rentals#destroy'
  
  
  

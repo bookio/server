@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   	protect_from_forgery with: :null_session
   
   
- 
+
   def error(msg, status)
     render :json => {:error => msg}, :status => status
   end
