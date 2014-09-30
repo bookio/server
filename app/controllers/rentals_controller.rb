@@ -25,6 +25,7 @@ class RentalsController < ApplicationController
 					rental = rentals.new()
 					rental.name    = sprintf('%s %d', name, index + 1)
 					rental.icon_id = 0
+					rental.option_ids = []
 					rental.save
 					
 					index += 1

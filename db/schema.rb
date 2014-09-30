@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922115650) do
+ActiveRecord::Schema.define(version: 20140930090432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 20140922115650) do
   end
 
   create_table "rentals", force: true do |t|
-    t.text     "name"
-    t.text     "description"
+    t.string   "name",        default: "",     null: false
+    t.text     "description", default: "",     null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "icon_id"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20140922115650) do
     t.integer  "available",   default: 1,      null: false
     t.integer  "client_id"
     t.binary   "data",        default: "null", null: false
-    t.integer  "option_ids",  default: [],                  array: true
+    t.integer  "option_ids",  default: [],     null: false, array: true
   end
 
   create_table "reservations", force: true do |t|
