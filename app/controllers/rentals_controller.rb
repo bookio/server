@@ -19,21 +19,30 @@ class RentalsController < ApplicationController
 			result  = []
 			rentals = current_session.user.client.rentals
 			
-			ActiveRecord::Base.transaction do
-				while index < count do
-				
-					rental = rentals.new()
-					rental.name    = sprintf('%s %d', name, index + 1)
-					rental.icon_id = 0
-					rental.option_ids = []
-					rental.save
+			if rentals.count == 0
+				ActiveRecord::Base.transaction do
+					while index < count do
 					
-					index += 1
-
-					result.push rental
-				end
+						rental = rentals.new()
+						
+						if count <= 1
+							rental.name = name
+						else
+							rental.name = sprintf('%s %d', name, index + 1)
+						end
+						
+						rental.icon_id = 0
+						rental.option_ids = []
+						rental.save
+						
+						index += 1
+	
+						result.push rental
+					end
+				
+				end   	
+			end
 			
-			end   	
 			
 			render :json => result
 		rescue Exception => exception
