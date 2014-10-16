@@ -73,12 +73,12 @@ Rails.application.routes.draw do
   get    'logout' => 'sessions#logout'
   get    'verify' => 'sessions#verify'
 
-  get    'customers'     => 'customers#fetch_all'
-  get    'customers/:id' => 'customers#fetch'
-  post   'customers'     => 'customers#create'
-  put    'customers/:id' => 'customers#update'
-  delete 'customers/:id' => 'customers#destroy'
-
+  get    'customers'              => 'customers#fetch_all'
+  get    'customers/search/:text' => 'customers#search'
+  get    'customers/:id'          => 'customers#fetch'
+  post   'customers'              => 'customers#create'
+  put    'customers/:id'          => 'customers#update'
+  delete 'customers/:id'          => 'customers#destroy'
 
   
   get    'reservations'     => 'reservations#fetch_all'

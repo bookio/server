@@ -18,7 +18,7 @@ class CustomersController < ApplicationController
 	
 	def search
 		begin
-			output current_session.user.client.customers.where("name ILIKE ? OR email ILIKE ? OR phone ILIKE ?", "%#{params[:search_text]}%", "%#{params[:search_text]}%", "%#{params[:search_text]}%")
+			output current_session.user.client.customers.where("name ILIKE ? OR email ILIKE ? OR phone ILIKE ?", "%#{params[:text]}%", "%#{params[:text]}%", "%#{params[:text]}%")
 		rescue Exception => exception
 			error exception.message, :not_found
 		end
@@ -42,7 +42,7 @@ class CustomersController < ApplicationController
 		begin
 			customer = current_session.user.client.customers.find(params[:id])
 	
-			if customer.update_attributes(params[:customer])
+			if customer.update_attributes(customers_params)
 				output customer
 			else
 				render :json => customer.errors, :status => :unprocessable_entity
