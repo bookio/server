@@ -11,23 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930124813) do
+ActiveRecord::Schema.define(version: 20141017104721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
 
   create_table "categories", force: true do |t|
-    t.string   "name"
-    t.text     "description",        default: "", null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.text     "image",              default: "", null: false
+    t.string   "name",        default: "", null: false
+    t.text     "description", default: "", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "image",       default: "", null: false
     t.integer  "client_id"
-    t.integer  "available",          default: 1,  null: false
-    t.integer  "limit_availability", default: 0,  null: false
-    t.time     "limit_from"
-    t.time     "limit_to"
+    t.integer  "available",   default: 1,  null: false
+    t.integer  "automatic",   default: 0,  null: false
   end
 
   create_table "clients", force: true do |t|
