@@ -118,6 +118,7 @@ Rails.application.routes.draw do
   
   post   'rentals/generate/:name/:count' => 'rentals#generate'
   get    'rentals'          => 'rentals#fetch_all'
+  get    'rentals/query'    => 'rentals#query'
   get    'rentals/:id'      => 'rentals#fetch'
   post   'rentals'          => 'rentals#create'
   put    'rentals/:id'      => 'rentals#update'

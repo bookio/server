@@ -18,11 +18,9 @@ class ReservationsController < ApplicationController
 
 	def create
 		begin
-			puts "CReating new reservation"
 			reservation = current_session.user.client.reservations.new(reservations_params)
 	
 			if reservation.save
-				puts "OK!!!!!!!!!!!!!!!"
 				render :json => reservation, :status => :created
 			else
 				render :json => reservation.errors, :status => :unprocessable_entity
