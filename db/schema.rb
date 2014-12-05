@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104124053) do
+ActiveRecord::Schema.define(version: 20141205142342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,10 @@ ActiveRecord::Schema.define(version: 20141104124053) do
     t.binary   "data",        default: "null", null: false
     t.integer  "option_ids",  default: [],                  array: true
     t.string   "style",       default: "",     null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "location",    default: "",     null: false
+    t.integer  "seats",       default: 1,      null: false
   end
 
   create_table "reservations", force: true do |t|
