@@ -126,12 +126,14 @@ class RentalsController < ApplicationController
 	def update
 		begin
 			rental = current_session.user.client.rentals.find(params[:id])
-	
+			puts "--------------"
+			puts rental_params
 			if rental.update_attributes(rental_params)
 				output rental
 			else
 				render :json => rental.errors, :status => :unprocessable_entity
 			end
+			puts "--------------"
 	
 		rescue Exception => exception
 			error exception.message, :not_found
