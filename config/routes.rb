@@ -123,6 +123,12 @@ Rails.application.routes.draw do
   post   'rentals'          => 'rentals#create'
   put    'rentals/:id'      => 'rentals#update'
   delete 'rentals/:id'      => 'rentals#destroy'
+
+  get    'schedules'          => 'schedules#fetch_all'
+  get    'schedules/:id'      => 'schedules#fetch'
+  post   'schedules'          => 'schedules#create'
+  put    'schedules/:id'      => 'schedules#update'
+  delete 'schedules/:id'      => 'schedules#destroy'
  
  
  

@@ -6,6 +6,8 @@ class Rental < ActiveRecord::Base
 	has_many :reservations, :dependent => :destroy
 	#has_many :options, :dependent => :destroy
 	
+	has_many :schedules, :dependent => :destroy
+	
 	
 	belongs_to :client
 	belongs_to :icon
