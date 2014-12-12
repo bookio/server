@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211100105) do
+ActiveRecord::Schema.define(version: 20141212101633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,14 +97,15 @@ ActiveRecord::Schema.define(version: 20141211100105) do
     t.datetime "begin_at"
     t.datetime "end_at"
     t.integer  "state"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "payed",       default: 0, null: false
-    t.integer  "delivered",   default: 0, null: false
-    t.integer  "transferred", default: 0, null: false
-    t.integer  "arrived",     default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "payed",       default: 0,  null: false
+    t.integer  "delivered",   default: 0,  null: false
+    t.integer  "transferred", default: 0,  null: false
+    t.integer  "arrived",     default: 0,  null: false
     t.float    "price"
     t.integer  "client_id"
+    t.string   "description", default: "", null: false
   end
 
   create_table "scenes", force: true do |t|
