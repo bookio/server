@@ -73,7 +73,7 @@ class OptionsController < ApplicationController
 	private
 	
 	def options_params
-	  params.require(:option).permit(:description, :name, :client_id)
+	  params.require(:option).permit!
 	
 	end
 	
