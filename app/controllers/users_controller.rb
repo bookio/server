@@ -19,7 +19,9 @@ class UsersController < ApplicationController
 	
 	def fetch_guest
 		begin
-			user = current_session.user.client.users.find_by_guest(true)
+			session = current_session
+			
+			user = session.user.client.users.find_by_guest(true)
 			
 			if user == nil 
 				user = session.user.client.users.new
@@ -31,7 +33,7 @@ class UsersController < ApplicationController
 			
 			render :json => user
 		rescue Exception => exception
-		error exception.message, :not_found
+			error exception.message, :not_found
 		end
 	end
 	

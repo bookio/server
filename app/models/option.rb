@@ -6,6 +6,10 @@ class Option < ActiveRecord::Base
 	before_destroy :cleanup
 	
 	
+	#def schedule
+	#	session.user.client.schedules.new(schedule_params)
+	#end
+	
 	def cleanup
 		# UPDATE rentals SET option_ids = array_remove(option_ids, 5) WHERE 5 = ANY (option_ids);
 		sql = ""
