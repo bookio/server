@@ -88,6 +88,8 @@ Rails.application.routes.draw do
   delete 'reservations/:id' => 'reservations#destroy'
 
   get    'options'     => 'options#fetch_all'
+  get    'options/:id/schedule' => 'options#fetch_schedule'
+  post   'options/:id/schedule' => 'options#update_schedule'
   get    'options/:id' => 'options#fetch'
   get    'options/rental/:id' => 'options#fetch_by_rental_id'
   post   'options'     => 'options#create'
@@ -124,11 +126,11 @@ Rails.application.routes.draw do
   put    'rentals/:id'      => 'rentals#update'
   delete 'rentals/:id'      => 'rentals#destroy'
 
-  get    'schedules'          => 'schedules#fetch_all'
-  get    'schedules/:id'      => 'schedules#fetch'
-  post   'schedules'          => 'schedules#create'
-  put    'schedules/:id'      => 'schedules#update'
-  delete 'schedules/:id'      => 'schedules#destroy'
+  get    'schedules'            => 'schedules#fetch_all'
+  get    'schedules/:id'        => 'schedules#fetch'
+  post   'schedules'            => 'schedules#create'
+  put    'schedules/:id'        => 'schedules#update'
+  delete 'schedules/:id'        => 'schedules#destroy'
  
  
  

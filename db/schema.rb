@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150112094952) do
+ActiveRecord::Schema.define(version: 20150127141756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150112094952) do
     t.integer  "units",       default: 0,  null: false
     t.string   "unit",        default: "", null: false
     t.integer  "selection",   default: 0,  null: false
+    t.text     "image",       default: "", null: false
   end
 
   create_table "rentals", force: true do |t|

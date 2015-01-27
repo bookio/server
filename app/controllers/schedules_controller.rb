@@ -9,6 +9,8 @@ class SchedulesController < ApplicationController
 			error exception.message, :not_found
 		end
 	end
+
+
 	
 	
 	
